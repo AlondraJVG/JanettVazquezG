@@ -1,2 +1,2 @@
-# JanettVazquezG
+# TareasDiseñoAlgoritmos
 Tareas
