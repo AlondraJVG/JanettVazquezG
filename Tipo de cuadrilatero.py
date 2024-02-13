@@ -1,3 +1,8 @@
+a = float
+b = float
+c = float
+d = float
+
 a = input ("Digite el numero: ")
 b = input ("Digite el numero: ") 
 c = input ("Digite el numero: ") 
