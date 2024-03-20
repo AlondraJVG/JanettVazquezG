@@ -1,13 +1,13 @@
-def pedir_tamanio_matriz():
+def pedir_tam_matriz():
     while True:
         try:
-            n = int(input("Ingrese un número para determinar el tamaño de la matriz: "))
+            n = int(input("Ingresa un número para determinar el tamaño de la matriz: "))
             if n > 0:
                 return n
             else:
-                print("Por favor, ingrese un número entero positivo.")
+                print("Ingrese un número entero positivo.")
         except ValueError:
-            print("Por favor, ingrese un número entero válido.")
+            print("Ingrese un número entero")
 
 def crear_matriz(n):
     matriz = [[0] * n for _ in range(n)]
@@ -24,7 +24,8 @@ def imprimir_matriz(matriz):
     for fila in matriz:
         print(" ".join(map(str, fila)))
 
-tamanio = pedir_tamanio_matriz()
-matriz = crear_matriz(tamanio)
+tam = pedir_tam_matriz()
+matriz = crear_matriz(tam)
 imprimir_matriz(matriz)
+
 
