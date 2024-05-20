@@ -1,0 +1,24 @@
+def ordenar_por_seleccion(arr, size):
+    for i in range(size):
+        min_idx = i
+        for j in range(i + 1, size):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+def imprimir(arr, size):
+    for i in range(size):
+        print(f"Numero: {arr[i]}")
+
+def main():
+    n = int(input("¿Cuantos numeros va a ingresar?: "))
+    data = [0] * n
+
+    for i in range(n):
+        data[i] = float(input(f"Digite el numero {i}: "))
+
+    ordenar_por_seleccion(data, n)
+    imprimir(data, n)
+
+if __name__ == "__main__":
+    main()
