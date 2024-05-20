@@ -1,0 +1,25 @@
+def swap(xp, yp):
+    return yp, xp
+
+def ordenar(arr, size):
+    for i in range(size):
+        for j in range(size - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = swap(arr[j], arr[j + 1])
+
+def imprimir(arr, size):
+    for i in range(size):
+        print(f"Numero: {arr[i]}")
+
+def main():
+    n = int(input("¿Cuantos numeros va a ingresar?: "))
+    data = [0] * n
+
+    for i in range(n):
+        data[i] = int(input(f"Digite el numero {i}: "))
+
+    ordenar(data, n)
+    imprimir(data, n)
+
+if __name__ == "__main__":
+    main()
