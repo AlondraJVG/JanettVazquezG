@@ -1,0 +1,47 @@
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+def imprimir(arr, size):
+    for i in range(size):
+        print(f"Numero: {arr[i]}")
+
+def main():
+    n = int(input("¿Cuántos números va a ingresar?: "))
+    data = [0] * n
+
+    for i in range(n):
+        data[i] = float(input(f"Digite el número {i}: "))
+
+    merge_sort(data)
+    imprimir(data, n)
+
+if __name__ == "__main__":
+    main()
+
