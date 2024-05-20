@@ -1,0 +1,32 @@
+def quicksort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quicksort(arr, low, pi - 1)
+        quicksort(arr, pi + 1, high)
+
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i = i + 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+def imprimir(arr, size):
+    for i in range(size):
+        print(f"Numero: {arr[i]}")
+
+def main():
+    n = int(input("¿Cuántos números va a ingresar?: "))
+    data = [0] * n
+
+    for i in range(n):
+        data[i] = float(input(f"Digite el número {i}: "))
+
+    quicksort(data, 0, n - 1)
+    imprimir(data, n)
+
+if __name__ == "__main__":
+    main()
