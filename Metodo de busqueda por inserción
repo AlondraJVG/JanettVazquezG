@@ -16,7 +16,7 @@ def main():
     data = [0] * n
 
     for i in range(n):
-        data[i] = int(input(f"Digite el numero {i}: "))
+        data[i] = float(input(f"Digite el numero {i}: "))
 
     ordenar_por_insercion(data, n)
     imprimir(data, n)
